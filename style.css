@@ -1,0 +1,302 @@
+:root{
+  --deep-1: #241a3f;
+  --deep-2: #2f2158;
+  --deep-3: #3a2a6e;
+  --gold: #f5c463;
+  --coral: #ff7b8b;
+  --mint: #7fd8c4;
+  --cream: #fff6e9;
+  --cream-dim: #d9cff0;
+  --shadow: 0 20px 45px rgba(20, 10, 45, 0.45);
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', sans-serif;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255,123,139,0.18), transparent 40%),
+    radial-gradient(circle at 85% 0%, rgba(127,216,196,0.16), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(245,196,99,0.14), transparent 50%),
+    linear-gradient(160deg, var(--deep-1) 0%, var(--deep-2) 55%, var(--deep-3) 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== Декоративний фон: конфеті + кульки ===== */
+.confetti{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.confetti span{
+  position: absolute;
+  top: -5%;
+  display: block;
+  width: 10px;
+  height: 16px;
+  opacity: 0.75;
+  border-radius: 2px;
+  animation: fall linear infinite;
+}
+.confetti span:nth-child(1){ left: 4%;  background: var(--gold);  animation-duration: 13s; animation-delay: 0s; }
+.confetti span:nth-child(2){ left: 14%; background: var(--coral); animation-duration: 17s; animation-delay: 2s; border-radius: 50%; width:10px; height:10px; }
+.confetti span:nth-child(3){ left: 24%; background: var(--mint);  animation-duration: 11s; animation-delay: 4s; }
+.confetti span:nth-child(4){ left: 38%; background: var(--gold);  animation-duration: 19s; animation-delay: 1s; border-radius: 50%; width:8px; height:8px;}
+.confetti span:nth-child(5){ left: 52%; background: var(--coral); animation-duration: 14s; animation-delay: 6s; }
+.confetti span:nth-child(6){ left: 63%; background: var(--mint);  animation-duration: 16s; animation-delay: 3s; }
+.confetti span:nth-child(7){ left: 74%; background: var(--gold);  animation-duration: 12s; animation-delay: 5s; border-radius: 50%; width:9px; height:9px;}
+.confetti span:nth-child(8){ left: 85%; background: var(--coral); animation-duration: 18s; animation-delay: 0.5s; }
+.confetti span:nth-child(9){ left: 92%; background: var(--mint);  animation-duration: 15s; animation-delay: 7s; }
+.confetti span:nth-child(10){left: 45%; background: var(--gold);  animation-duration: 20s; animation-delay: 8s; }
+
+@keyframes fall{
+  0%   { transform: translateY(-10vh) rotate(0deg);   opacity: 0.9; }
+  100% { transform: translateY(110vh) rotate(400deg); opacity: 0.4; }
+}
+
+.balloons{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.balloon{
+  position: absolute;
+  bottom: -20%;
+  width: 60px;
+  height: 74px;
+  border-radius: 50% 50% 48% 48%;
+  animation: rise linear infinite;
+  opacity: 0.5;
+  filter: blur(0.3px);
+}
+.balloon::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:100%;
+  width:1px;
+  height:70px;
+  background: rgba(255,246,233,0.25);
+  transform: translateX(-50%);
+}
+.balloon.b1{ left: 8%;  background: radial-gradient(circle at 30% 25%, #ffb3c0, var(--coral)); animation-duration: 26s; animation-delay: 0s; }
+.balloon.b2{ left: 80%; background: radial-gradient(circle at 30% 25%, #ffe6a8, var(--gold));  animation-duration: 32s; animation-delay: 6s; }
+.balloon.b3{ left: 60%; background: radial-gradient(circle at 30% 25%, #c9f3e7, var(--mint));  animation-duration: 29s; animation-delay: 12s; }
+
+@keyframes rise{
+  0%   { transform: translateY(0) translateX(0); }
+  50%  { transform: translateY(-60vh) translateX(20px); }
+  100% { transform: translateY(-125vh) translateX(-10px); }
+}
+
+.wrap{
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== Header ===== */
+header{
+  padding: 90px 0 60px;
+  text-align: center;
+}
+
+.eyebrow{
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 22px;
+  font-weight: 700;
+}
+
+h1.title{
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 1.05;
+  margin: 0 0 24px;
+  background: linear-gradient(100deg, var(--cream) 20%, var(--gold) 55%, var(--coral) 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle{
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+  line-height: 1.65;
+  color: var(--cream-dim);
+  font-weight: 500;
+}
+
+.divider{
+  width: 80px;
+  height: 3px;
+  margin: 34px auto 0;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--coral), var(--gold), var(--mint));
+}
+
+/* ===== Gallery ===== */
+main{
+  padding-bottom: 40px;
+}
+
+.gallery-heading{
+  text-align: center;
+  margin: 0 0 44px;
+}
+.gallery-heading h2{
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin: 0 0 10px;
+  color: var(--cream);
+}
+.gallery-heading p{
+  color: var(--cream-dim);
+  margin: 0;
+  font-size: 0.98rem;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+.card{
+  position: relative;
+  background: linear-gradient(160deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 20px;
+  padding: 26px 22px 24px;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card:hover{
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(245,196,99,0.55);
+  box-shadow: 0 26px 55px rgba(255, 123, 139, 0.25);
+}
+
+.card-number{
+  font-family: 'Fraunces', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.card-name{
+  font-family: 'Fraunces', serif;
+  font-size: 1.28rem;
+  font-weight: 500;
+  color: var(--cream);
+  line-height: 1.3;
+}
+
+.card-sub{
+  font-size: 0.86rem;
+  color: var(--cream-dim);
+  margin-top: -8px;
+}
+
+.play-icon{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.card:hover .play-icon{ transform: scale(1.1) rotate(8deg); }
+.play-icon svg{ width: 16px; height: 16px; fill: var(--deep-1); margin-left: 2px; }
+
+.watch-btn{
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--deep-1);
+  background: linear-gradient(100deg, var(--gold), var(--coral));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.watch-btn:hover{
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+}
+.watch-btn:active{ transform: translateY(0); }
+
+/* ===== Footer ===== */
+footer{
+  text-align: center;
+  padding: 70px 24px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+footer .quote{
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+  max-width: 640px;
+  margin: 0 auto 18px;
+  color: var(--cream);
+  line-height: 1.5;
+}
+
+footer .signature{
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+}
+
+footer .heart{
+  margin-top: 22px;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 480px){
+  header{ padding: 60px 0 40px; }
+  .card{ padding: 22px 18px 20px; }
+  .grid{ gap: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .confetti span, .balloon{ animation: none; }
+  .card{ transition: none; }
+}

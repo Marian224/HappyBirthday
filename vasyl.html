@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Привітання №1 — З Днем Народження! 🎉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="video.css">
+</head>
+<body>
+
+  <!-- Декоративне конфеті -->
+  <div class="confetti" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="wrap">
+
+    <nav class="back-nav">
+      <a class="back-btn" href="index.html">
+        <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+        Назад до усіх привітань
+      </a>
+    </nav>
+
+    <header>
+      <span class="eyebrow">Особисте відеопривітання</span>
+      <!-- ЗАМІНІТЬ ЗАГОЛОВОК: наприклад "Привітання від Марії" або "Особливе відео-привітання №1" -->
+      <h1 class="title">Привітання від [Тато]</h1>
+      <p class="subtitle">Натисни ▶, щоб переглянути</p>
+      <div class="divider"></div>
+    </header>
+
+    <main>
+      <div class="video-card">
+        <div class="video-frame">
+
+          <!-- ================================================= -->
+          <!-- ВАРІАНТ 1: YouTube / Vimeo (iframe)                 -->
+          <!-- Встав своє посилання в src нижче замість прикладу. -->
+          <!-- Для YouTube використовуй формат вбудовування:      -->
+          <!-- https://www.youtube.com/embed/ID_ВІДЕО             -->
+          <!-- Для Vimeo:  https://player.vimeo.com/video/ID      -->
+          <!-- ================================================= -->
+          <!-- <iframe
+            src="https://www.youtube.com/embed/ВАШЕ_ID_ВІДЕО"
+            title="Відео-привітання"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe> -->
+
+          <!-- ================================================= -->
+          <!-- ВАРІАНТ 2: власний відеофайл (замість iframe вище) -->
+          <!-- Розкоментуй блок нижче, встав шлях/посилання на    -->
+          <!-- .mp4 файл (наприклад з Google Drive або хостингу)  -->
+          <!-- і видали або закоментуй iframe вище.                -->
+          <!-- ================================================= -->
+          
+          <video controls poster="ШЛЯХ_ДО_ОБКЛАДИНКИ.jpg">
+            <source src="./video/IMG_5026.MOV" type="video/mp4">
+            Ваш браузер не підтримує відтворення відео.
+          </video>
+          
+
+        </div>
+      </div>
+
+      <div class="wish">
+        <div class="mark">"</div>
+        <!-- ВСТАВТЕ ТЕКСТ ПОБАЖАННЯ / ЦИТАТИ ВІД АВТОРА ВІДЕО -->
+        <p>
+          Тут можна залишити тепле побажання, яке доповнює відео —
+          коротку цитату, жарт чи спогад, який хочеться зберегти назавжди.
+        </p>
+        <!-- ВСТАВТЕ ІМ'Я АВТОРА ПРИВІТАННЯ -->
+        <div class="from">— Ім'я автора привітання</div>
+      </div>
+
+      <!-- ================================================= -->
+      <!-- Опційно: навігація "попереднє / наступне" привітання -->
+      <!-- Онови href на реальні файли сторінок, наприклад       -->
+      <!-- video2.html, video3.html і т.д., або видали цей блок  -->
+      <!-- ================================================= -->
+      <div class="pager">
+        <a href="index.html">← Усі привітання</a>
+        <a href="#">Наступне привітання →</a>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>
